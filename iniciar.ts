@@ -5,7 +5,7 @@ import * as config from "./config";
 
 const requireDir = require("require-dir");
 
-export function initAPI(app:Express){
+export function initAPI(app: Express) {
 
     app.use(bodyParser.json({ limit: "150mb" }));
     app.use(
@@ -28,7 +28,7 @@ export function initAPI(app:Express){
         }
     });
 
- 
+
     for (const m in config.modules) {
         if (config.modules[m].active) {
             const routes = requireDir(config.modules[m].path);
