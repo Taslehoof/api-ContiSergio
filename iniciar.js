@@ -3,8 +3,10 @@ exports.__esModule = true;
 exports.initAPI = void 0;
 var bodyParser = require("body-parser");
 var config = require("./config");
+var connections_1 = require("./connections");
 var requireDir = require("require-dir");
 function initAPI(app) {
+    connections_1.Connections.initialize();
     app.use(bodyParser.json({ limit: "150mb" }));
     app.use(bodyParser.urlencoded({
         extended: true

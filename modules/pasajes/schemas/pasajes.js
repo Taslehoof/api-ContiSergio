@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 exports.PasajeSchema = new mongoose.Schema({
     nombre: { type: String },
     aerolinea: { type: String },
-    puerta: { type: Number },
+    puerta: { type: String },
     hora: { type: String }
 });
-exports.pasajes = mongoose.model("Pasaje", exports.PasajeSchema, "pasajes");
+exports.pasajes = mongoose.model("Pasajes", exports.PasajeSchema, "pasajes");

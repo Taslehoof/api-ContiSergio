@@ -3,9 +3,13 @@ import * as Express from "express";
 
 import * as config from "./config";
 
+import { Connections } from "./connections";
+
 const requireDir = require("require-dir");
 
 export function initAPI(app: Express) {
+
+    Connections.initialize();
 
     app.use(bodyParser.json({ limit: "150mb" }));
     app.use(
